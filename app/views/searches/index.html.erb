@@ -1,0 +1,20 @@
+
+
+<h1>Coordenadas del codigo postal</h1>
+
+<%# <p>Lat: <%= @coordinates["lat"] %></p>
+<%# <p>Lng: <%= @coordinates["lng"] %></p>
+<%= text_field_tag 'zip', nil, maxlength: 5 %>
+<%= form_tag('/posts') do %>
+<div><%= submit_tag 'Save' %></div>
+<% end %>
+
+<h1>Restaurants around</h1>
+
+
+<% @data.each do|restaurant| %>
+<p>-  <%= restaurant["displayName"]["text"]%> </p>
+<p>Address: <%= restaurant["formattedAddress"]%> </p>
+<p>Rating: <%= restaurant["rating"]%>  </p>
+<p>***************************************</p>
+<%end%>
