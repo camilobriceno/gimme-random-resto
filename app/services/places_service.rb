@@ -8,7 +8,7 @@ class PlacesService
   def initialize(postal_code)
 
     @postal_code = 10437
-    
+
   end
 
   def call
@@ -28,7 +28,6 @@ class PlacesService
   def fetch_coordinates
     # llama a Geocoding API, devuelve lat y lng (privado)
     url = "#{GEOCODING_URL}address=#{@postal_code}&key=#{api_key}"
-    #google_places_key: "AIzaSyBD-4S62QSP1GIFSWJK2XPL2EGUjRuMSbE"
 
     #aqui se obtiene el objeto de datos JSON
     response = HTTParty.get(url)
